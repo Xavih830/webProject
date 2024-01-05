@@ -20,6 +20,8 @@ CREATE TABLE IF NOT EXISTS EMPLEADO (
   APELLIDOS VARCHAR(255) NOT NULL,
   CARGO ENUM("Asistente de Facturación", "Asistente de Cobranzas", "Asistente de Contabilidad", "Asistente de Importaciones", "Bodega", "Compras", "Desarrollador", "Implementador", "Gerente de Operaciones", "Gerente de Ventas", "Gerente General", "Pasante", "Recepcionista", "Supervisor", "Recursos Humanos", "Técnico"),
   DEPARTAMENTO INT,
+  ES_ADMIN BOOLEAN,
+  ES_USUARIO BOOLEAN,
   AREA INT,
   EXT_TLF INT,
   FOREIGN KEY (DEPARTAMENTO, AREA) REFERENCES DEPARTAMENTO (ID, AREA)
