@@ -3,12 +3,12 @@ USE INVENTARIO;
 
 CREATE TABLE IF NOT EXISTS AREA (
   ID INT AUTO_INCREMENT PRIMARY KEY,
-  NOMBRE VARCHAR(255) NOT NULL
+  NOMBRE ENUM("Administrativa", "Bodega", "Recepción", "Contabilidad", "Técnica")
 );
 
 CREATE TABLE IF NOT EXISTS DEPARTAMENTO (
   ID INT AUTO_INCREMENT,
-  NOMBRE VARCHAR(255) NOT NULL,
+  NOMBRE ENUM("Ventas", "Contabilidad", "Implementación", "Importaciones", "Compras", "Bodega", "RRHH", "RMA", "Desarrollo", "Gerencia", "Recepción", "Diseño Gráfico", "Sala de reunión"),
   AREA INT NOT NULL,
   FOREIGN KEY (AREA) REFERENCES AREA (ID),
   PRIMARY KEY (ID, AREA)
